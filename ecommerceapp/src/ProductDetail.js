@@ -4,7 +4,7 @@ export class ProductDetail extends Component {
   render() {
     return (
       <div>
-        <h1>this is our detail page of the product you viewed</h1>
+        <h1>This Is Our Detail Page of Product You Viewed</h1>
       </div>
     )
   }

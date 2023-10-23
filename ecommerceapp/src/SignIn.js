@@ -60,12 +60,14 @@ export class SignIn extends Component {
       textAllign:'center',
       padding:'20px',
       marginLeft:'30%',
-      borderRadius:'15px 10px 20px'
+      borderRadius:'15px 10px 20px',
+      backgroundColor:'lightgrey'
     }
  
     return (
       <form onSubmit= {this.handleSubmit} style={Form}>
         <h3 style={{textAllign:'center',fontStyle:'italic'}}>Welcome to SignIn Page</h3><br/>
+        
         <label style={{fontStyle:'italic'}}>Email-ID</label><br/>
         <input type='email' name='email' value={email} style={inputStyle} onChange={this.handleInputChange} /><br/>
         <span className='error' style={errorStyle}>{emailError}</span><br/>
