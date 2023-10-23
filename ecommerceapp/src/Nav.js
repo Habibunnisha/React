@@ -19,6 +19,7 @@ export class Nav extends Component {
             <Link to='complaint' style={linkStyle}>Complaint</Link>
             <Link to='galleryPage' style={linkStyle}>GalleryPage</Link>
             <Link to='signIn' style={linkStyle}>SignIn</Link>
+            
         </nav>
       </div>
     )

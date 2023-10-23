@@ -5,6 +5,8 @@ import Display from './Display';
 import Register from './Register';
 import IncrementCounter from './IncrementCounter';
 import TitleProgram from './TitleProgram';
+import MapDemo from './MapDemo';
+import ConditionalRender from './ConditionalRender';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
     <Register></Register>
     <IncrementCounter></IncrementCounter>
     <TitleProgram></TitleProgram>
+    <MapDemo/>
+    <ConditionalRender/>
     </div>
   );
 }

@@ -11,7 +11,7 @@ import Nav from './Nav'
 import ContactUs from './ConatactUs'
 import HocComponent from './HocComponent';
 import LabelHover from './LabelHover';
-import Hook from './Hook'
+import {Example,Example2} from './Hook'
 
 function App() {
   return (
@@ -22,7 +22,8 @@ function App() {
          {/* <ButtonClick></ButtonClick> */}
          <HocComponent></HocComponent>
          <Conditional></Conditional>
-         <Hook/>
+         <Example></Example>
+         <Example2></Example2>
        <BrowserRouter >
            <Nav/>
               <Routes>

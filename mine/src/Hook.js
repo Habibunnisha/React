@@ -15,7 +15,16 @@ function Example(){
         </div>
     )
 }
+function Example2(){
+    return(
+        <div>
+           example2
+           <h1>123</h1>
+        </div>
+        
+    )
+}
 
 
 
-export default  Example
+export   {Example,Example2}
