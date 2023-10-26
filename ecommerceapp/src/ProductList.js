@@ -10,7 +10,7 @@ export class ProductList extends Component {
     }
   }
   getAllProduct(){
-    axios.get("http://localhost:3000/employee").then((response)=>
+    axios.get("http://localhost:3000/products").then((response)=>
     this.setState({
         products:response.data
     })
@@ -18,17 +18,43 @@ export class ProductList extends Component {
         console.log('unable to fetch data',error)
     })
   }
+  deleteAllProduct(productId){
+    axios.delete(`http://localhost:3000/products/${productId}`).then((response)=>{
+      this.setState((prevState)=>({
+        products:prevState.products.filter((product)=>product.id !==productId)
+      }));
+  }).catch((error)=>{
+    console.log('unable to delete product',error)
+  })
+}
   
   
     render() {
         const product=this.state.products.map((product)=>{
-            
+            return(
+              <tr >
+                <td>{product.id}</td>
+                <td>{product.title}</td>
+                <td>{product.price}</td>
+              </tr>
+            )
         })
     return (
       <div>
-        ProductList
-
-      </div>
+      <h3>Product</h3>
+      <table>
+        <thead>
+          <td>Product Id</td>
+          <td>Product Title</td>
+          <td>Product Price</td>
+        </thead>
+        <tbody>
+          {product}
+        </tbody>
+      </table>
+      <button onClick={()=>this.getAllProduct()}>Dispaly Products</button>
+      <button onClick={()=>this.deleteAllProduct(product.id)}>Delete Product</button>
+     </div>
     )
   }
 }
