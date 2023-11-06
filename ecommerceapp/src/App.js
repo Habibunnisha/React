@@ -7,9 +7,12 @@ import Complaint from './Complaint'
 import GalleryPage from './GalleryPage'
 import ProductDetail from './ProductDetail'
 import Nav from './Nav'
-
+import Dolls from './Dolls'
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import ProductList from './ProductList';
+import HookCounter from './HookCounter';
+import PageNotFound from './PageNotFound';
+// import AuthorPage from './AuthorPage';
 // import ControlledSignin from './ControlledSignin';
 
 
@@ -20,15 +23,18 @@ function App() {
           <Nav/>
             <Routes>
 
-              <Route path='home' element={<Home/>}></Route>
-              <Route path='product' element={<Product/>}></Route>
-              <Route path='product-detail' element={<ProductList/>}></Route>
-              <Route path='complaint' element={<Complaint/>}></Route>
-              <Route path='galleryPage' element={<GalleryPage/>}></Route>
-              <Route path='signIn' element={<SignIn/>}></Route>
-             
+              <Route path='home' element={<Home/>}/>
+              <Route path='product' element={<Product/>}>
+                <Route path='dolls' element={<Dolls/>}/>
+              </Route>
+              <Route path='product-detail' element={<ProductList/>}/>
+              <Route path='complaint' element={<HookCounter/>}/>
+              <Route path='galleryPage' element={<GalleryPage/>}/>
+              <Route path='signIn' element={<SignIn/>}/>
+             <Route path='*' element={<PageNotFound/>}/>
             </Routes>
       </BrowserRouter>
+      {/* <AuthorPage/> */}
     </div>
   );
 }

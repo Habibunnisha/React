@@ -12,6 +12,8 @@ import ContactUs from './ConatactUs'
 import HocComponent from './HocComponent';
 import LabelHover from './LabelHover';
 import {Example,Example2} from './Hook'
+import HookCounter from './HookCounter';
+import AuthorPage from './AuthorPage';
 
 function App() {
   return (
@@ -24,12 +26,15 @@ function App() {
          <Conditional></Conditional>
          <Example></Example>
          <Example2></Example2>
+         <HookCounter/>
+         <AuthorPage/>
        <BrowserRouter >
            <Nav/>
               <Routes>
                 <Route path='Home' element={<Home/>}></Route>
                 <Route path='Products' element={<LabelHover/>}></Route>
                 <Route path='ContactUs' element={<ButtonClick/>}></Route>
+                
               </Routes>
        </BrowserRouter>
       </div>

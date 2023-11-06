@@ -7,6 +7,7 @@ import IncrementCounter from './IncrementCounter';
 import TitleProgram from './TitleProgram';
 import MapDemo from './MapDemo';
 import ConditionalRender from './ConditionalRender';
+import AuthorPage from './AuthorPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
     <TitleProgram></TitleProgram>
     <MapDemo/>
     <ConditionalRender/>
+    <AuthorPage></AuthorPage>
     </div>
   );
 }

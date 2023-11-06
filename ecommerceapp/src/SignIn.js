@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom';
 
 export class SignIn extends Component {
   constructor(props) {
@@ -9,7 +10,8 @@ export class SignIn extends Component {
     email:'',
     password:'',
     emailError:'',
-    passwordError:''
+    passwordError:'',
+    // redirectToProduct: false,
    };
   }
   handleSubmit=(event)=>{
@@ -32,6 +34,7 @@ export class SignIn extends Component {
     }
     if(isValid){
     alert('you have successfully submitted')
+    // this.setState({redirectToProduct:true})
   }
 }
   handleInputChange=(event)=>{
@@ -41,40 +44,20 @@ export class SignIn extends Component {
   
   render() {
     const {email,password,emailError,passwordError}=this.state
-    
-    const inputStyle={
-      width:'60%',
-      padding:'10px',
-      margin:'5px 0',
-      border:'2px solid black',
-      borderRadius:'3px'
-    }
-    const errorStyle={
-      color:'red',
-      fontSize:'20px'
-    }
-    const Form={
-      border:'2px solid black',
-      width:'40vw',
-      marginTop:'50px',
-      textAllign:'center',
-      padding:'20px',
-      marginLeft:'30%',
-      borderRadius:'15px 10px 20px',
-      backgroundColor:'lightgrey'
-    }
- 
+    // if(redirectToProduct){
+    //   return <Redirect to='/product'/>
+    // }  
     return (
-      <form onSubmit= {this.handleSubmit} style={Form}>
+      <form  action='/product' onSubmit= {this.handleSubmit} className='Form'>
         <h3 style={{textAllign:'center',fontStyle:'italic'}}>Welcome to SignIn Page</h3><br/>
         
         <label style={{fontStyle:'italic'}}>Email-ID</label><br/>
-        <input type='email' name='email' value={email} style={inputStyle} onChange={this.handleInputChange} /><br/>
-        <span className='error' style={errorStyle}>{emailError}</span><br/>
+        <input type='email' name='email' value={email} className='inputStyle' onChange={this.handleInputChange} /><br/>
+        <span className='errorStyle' >{emailError}</span><br/>
   
         <label>Password</label><br/>
-        <input type='text' style={inputStyle} name='password' value={password} onChange={this.handleInputChange}/><br/>
-        <span className='password' style={errorStyle}>{passwordError}</span><br/>
+        <input type='text' className='inputStyle' name='password' value={password} onChange={this.handleInputChange}/><br/>
+        <span className='errorStyle'>{passwordError}</span><br/>
         <input type='submit' value='Submit' className='btn btn-primary'/>
       </form>
      
